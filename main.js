@@ -52,13 +52,17 @@ const setCanvasDimensions = () => {
   // Use devicePixelRatio to ensure maximum quality on retina displays
   const dpr = window.devicePixelRatio || 1;
 
+  // Use document element client sizes to prevent mobile toolbar jump
+  const w = html.clientWidth;
+  const h = html.clientHeight;
+
   // Set the "actual" size of the canvas
-  canvas.width = window.innerWidth * dpr;
-  canvas.height = window.innerHeight * dpr;
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
 
   // Set the "drawn" size of the canvas
-  canvas.style.width = `${window.innerWidth}px`;
-  canvas.style.height = `${window.innerHeight}px`;
+  canvas.style.width = `${w}px`;
+  canvas.style.height = `${h}px`;
 
   // Normalize coordinate system to use css pixels
   context.scale(1, 1);
@@ -85,7 +89,7 @@ let currentFrameDisplay = 0;
 // Use passive event listener for better scroll performance
 window.addEventListener('scroll', () => {
   const scrollTop = html.scrollTop;
-  const maxScrollTop = Math.max(1, html.scrollHeight - window.innerHeight);
+  const maxScrollTop = Math.max(1, html.scrollHeight - html.clientHeight);
 
   const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScrollTop));
   targetFrame = scrollFraction * frameCount;
