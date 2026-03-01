@@ -49,8 +49,8 @@ app.post('/api/order', (req, res) => {
     });
 });
 
-// Catch-all route to serve the SPA
-app.get('*', (req, res) => {
+// Serve the SPA for frontend routes
+app.get('/', (req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
 });
 
