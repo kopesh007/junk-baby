@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Junk Baby - Premium Drinking Juices" />
+  <title>Junk Baby</title>
+  <!-- Modern Fonts: Playfair Display for Luxury Headings, Outfit for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;500;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <!-- Fixed Top Right Navigation -->
+  <nav class="corner-nav">
+    <ul>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#ingredients">Ingredients</a></li>
+      <li><button id="nav-order-btn" class="nav-order-btn">Order</button></li>
+    </ul>
+  </nav>
+  <!-- Background Canvas for Scroll Video -->
+  <div class="canvas-container">
+    <canvas id="hero-lightpass"></canvas>
+  </div>
+
+  <!-- UI Overlay overlaying the canvas -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-brand-container">
+        <h1 class="logo-text">JUNK<br />BABY</h1>
+        <div class="hero-content">
+          <p class="subtitle">100% Raw Cold-Pressed Rebellion.</p>
+          <p class="hero-summary">Unapologetically organic. We craft high-end, nutrient-dense elixirs designed to fuel
+            modern creatives, rebels, and entrepreneurs living on the edge of tomorrow.</p>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse"></div>
+      </div>
+    </section>
+
+    <section id="story" class="content-section about-section">
+      <div class="glass-card left-aligned">
+        <h2>Our Philosophy</h2>
+        <div class="card-content-wrapper">
+          <p>Welcome to Junk Baby. We are rebelling against the artificial, sugar-loaded beverage industry. Our mission
+            is simple: provide exactly what your body craves—100% raw, unpasteurized, cold-pressed vitality in a bottle.
+          </p>
+          <p>Whether you need a morning detox, a mid-day energy spike, or a post-workout recovery, our curated organic
+            blends are designed to reset your system and elevate your lifestyle. We don't do compromises; we only do the
+            best nature has to offer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ingredients" class="content-section advantages-section">
+      <div class="glass-card right-aligned accent-card">
+        <h2>Pure Ingredients</h2>
+        <div class="card-content-wrapper">
+          <p>Supercharge your day. Junk Baby juices are packed with essential vitamins and raw enzymes that rapidly
+            absorb into your bloodstream, boosting your immune system and providing instant, clean energy without the
+            crash.</p>
+          <div class="card-image-wrapper">
+            <img src="/ingredients.png" alt="Organic Ingredients" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section neural-section">
+      <div class="glass-card left-aligned neural-card">
+        <h2>Neural Benefits</h2>
+        <div class="card-content-wrapper">
+          <p>Elevate your mind. Our unique blend contains high levels of antioxidants and natural nootropics designed to
+            improve focus, enhance cognitive function, and clear brain fog. Drink smart.</p>
+          <div class="card-image-wrapper">
+            <img src="/neural.png" alt="Neural Energy Juice" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section product-section">
+      <div class="glass-card right-aligned">
+        <h2>Pure Excellence</h2>
+        <p>No added sugars. No preservatives. Just 100% pure, cold-pressed magic designed to fuel your day beautifully
+          and holistically.</p>
+      </div>
+    </section>
+
+    <section class="content-section footer-section">
+      <div class="special-footer-card center-aligned fade-in-up">
+        <h2 class="taste-diff-title">Taste the Difference</h2>
+        <p class="taste-diff-desc">Visit us today in downtown and elevate your refreshment experience. Discover your new
+          favorite blend.</p>
+        <div class="contact-info">
+          <p><strong>📍 GST ROAD , MADURANTHAKAM</strong></p>
+          <p>📞 91+ 6380804311</p>
+          <p>📱 @JunkBabyOfficial (Kopesh) </p>
+        </div>
+        <button id="order-btn" class="cta-btn custom-order-btn">Order Now</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Order Modal -->
+  <div id="order-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="close-modal" class="close-btn">&times;</button>
+      <h2>Get Your Junk Baby Fix</h2>
+      <p>Drop your details below and we'll reach out on WhatsApp to finalize your delivery!</p>
+      <form id="order-form">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required placeholder="John Doe">
+        </div>
+        <div class="input-group">
+          <label for="whatsapp">WhatsApp Number</label>
+          <input type="tel" id="whatsapp" required placeholder="+1 234 567 8900">
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">Send Details</button>
+        <p id="form-msg" class="form-msg"></p>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
